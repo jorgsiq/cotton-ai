@@ -65,11 +65,18 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
+const isEmptyOrSpaces = (str) => {
+    return str === null || str.match(/^ *$/) !== null;
+}
+
 const handleSubmit = async (e) => {
     e.preventDefault()
 
     const data = new FormData(form)
 
+    if (isEmptyOrSpaces(data.get('prompt'))){
+        return;
+    }
     // user's chatstripe
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
 
@@ -89,7 +96,7 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('http://localhost:4000', {
+    const response = await fetch('https://cotton-ai.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
