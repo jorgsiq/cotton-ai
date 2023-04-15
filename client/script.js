@@ -65,6 +65,17 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
+const startup = () => {
+    setTimeout(() => {
+        chatContainer.innerHTML += `<div class="wrapper ai"><div class="chat"><div class="profile"><img src=${bot}  alt="bot" /></div><div class="message" id="startup2">I can also recommend movies and books, generate and summarize text, write poetry and songs, perform sentiment analysis, generate programming code, and much more..</div></div>`;
+    }, "1000");
+    setTimeout(() => {
+        chatContainer.innerHTML += `<div class="wrapper ai"><div class="chat"><div class="profile"><img src=${bot}  alt="bot" /></div><div class="message" id="startup2">Sometimes it takes me a moment to start up, so please don't be alarmed if there's a slight delay in my response to your first message.</div></div>`;
+    }, "3000");
+   
+
+}
+
 const isEmptyOrSpaces = (str) => {
     return str === null || str.match(/^ *$/) !== null;
 }
@@ -74,11 +85,12 @@ const handleSubmit = async (e) => {
 
     const data = new FormData(form)
 
-    if (isEmptyOrSpaces(data.get('prompt'))){
+    if (isEmptyOrSpaces(data.get('prompt'))) {
         return;
     }
+
     // user's chatstripe
-    chatContainer.innerHTML += chatStripe(false, data.get('prompt').charAt(0).toUpperCase() + data.get('prompt').slice(1))
+    chatContainer.innerHTML += (chatStripe(false, data.get('prompt').charAt(0).toUpperCase() + data.get('prompt').slice(1)))
 
     // to clear the textarea input 
     form.reset()
@@ -121,6 +133,7 @@ const handleSubmit = async (e) => {
     }
 }
 
+startup();
 form.addEventListener('submit', handleSubmit);
 document.querySelector('#submit-button').addEventListener('click', (e) => {
     e.preventDefault();

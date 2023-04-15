@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Alegreya Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
 
 #app {
   width: 100vw;
-  height: -webkit-fill-available;
+  height: 100vh;
   background: #343541;
 
   display: flex;
@@ -89,8 +90,7 @@ body {
 .profile {
   width: 36px;
   height: 36px;
-  border-radius: 5px;
-
+  border-radius: 90px;
   background: #766da1;
 
   display: flex;
@@ -111,8 +111,8 @@ body {
 .message {
   flex: 1;
 
-  color: #dcdcdc;
-  font-size: 20px;
+  color: #dedede;
+  font-size: 16px;
 
   max-width: 100%;
   overflow-x: scroll;
@@ -121,6 +121,7 @@ body {
 
   -ms-overflow-style: none;
   scrollbar-width: none;
+  transition: 0.2s;
 }
 
 /* hides scrollbar */
@@ -144,30 +145,27 @@ form {
 }
 
 h1{
-  -webkit-text-stroke: 1px #fce9ff;
-  font-family: 'Lilita One', cursive;
+  -webkit-text-stroke: 3px #40414f;
+  font-family: 'Alegreya Sans SC';
+  font-size: 45px;
   margin-top: 20px;
-  color: #cca0c4;
-}
-
-h2{
-  font-weight: 300;
-  font-size: 16px;
-  color: #bababa;
+  color: transparent;
 }
 
 textarea {
   width: 100%;
   resize: none;
-
-  color: #fff;
-  font-size: 18px;
-
+  font-size: 16px;
+  color: #dedede;
   padding: 10px;
   background: transparent;
   border-radius: 5px;
   border: none;
   outline: none;
+}
+
+::placeholder{
+  color: #bababa;
 }
 
 button {
