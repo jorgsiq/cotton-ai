@@ -1,4 +1,4 @@
-[LEARN MORE](https://jorgesiqueira.com/post/cotton-ai)
+[LEARN MORE](https://jorgesiqueira.com/post/cotton-ai) (About the Project)
 
 ## Built With
 
